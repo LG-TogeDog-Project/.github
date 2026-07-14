@@ -7,7 +7,7 @@
 추천 파일명: assets/images/cover.png
 내용: 휠체어를 사용하는 보호자와 반려견이 함께 있는 TogeDog 대표 이미지
 -->
-![서비스 전체 화면](./assets/images/cover.png)
+![서비스 전체 화면](./assets/cover.png)
 ---
 
 ## 1. 프로젝트 개요
@@ -598,9 +598,6 @@ TogeDog
     └── 디바이스 관리
 ```
 
-<!-- IMAGE: 메뉴 정보구조도 삽입
-추천 파일명: assets/images/information-architecture.png
--->
 
 ### 화면 흐름
 
@@ -615,16 +612,20 @@ TogeDog
 9. 산책 종료 후 리포트 생성
 10. 마이페이지에서 정보와 환경설정 수정
 
-
-<!-- IMAGE: 산책 모드 음성 안ㅐ 화면
-추천 파일명: assets/screens/walk-live.png
--->
-![서비스 전체 화면](./assets/sound.png)
-
-<!-- IMAGE: 위험 수준별 진동 안내 화면
-추천 파일명: assets/screens/haptic-alert.png
--->
-![서비스 전체 화면](./assets/vibration.png)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="./assets/sound.png" width="320" alt="산책 모드 음성 안내 화면" />
+    </td>
+    <td align="center" width="50%">
+      <img src="./assets/vibration.png" width="320" alt="위험 수준별 진동 안내 화면" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">산책 모드 음성 안내 화면</td>
+    <td align="center">위험 수준별 진동 안내 화면</td>
+  </tr>
+</table>
 
 ---
 
