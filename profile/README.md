@@ -13,6 +13,8 @@
 ![WebRTC](https://img.shields.io/badge/WebRTC-333333?logo=webrtc&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Prototype-8756E7)
 
+<img src="./assets/cover.png" width="100%" alt="TogeDog 프로젝트 커버" />
+
 </div>
 
 > TogeDog은 반려견 웨어러블 카메라의 전방 영상을 AI로 분석하고, 위험 정보를 사용자의 접근성 모드에 맞춰 음성·진동·텍스트로 전달합니다. 반려견의 산책·생체 데이터는 일간·주간·월간 리포트로 연결됩니다.
@@ -22,6 +24,17 @@
 | Detect | Translate | Care |
 |---|---|---|
 | 객체 탐지 모델로 산책 중 위험 요소 감지 | 시각·청각 특성에 맞는 멀티모달 알림 | 산책·위험·생체 데이터를 리포트로 관리 |
+
+## Experience Preview
+
+<p align="center">
+  <img src="./assets/sound.png" width="40%" alt="산책 모드 음성 안내 화면" />
+  <img src="./assets/vibration.png" width="40%" alt="위험 수준별 진동 안내 화면" />
+</p>
+
+<p align="center">
+  음성 안내 중심의 시각장애인 모드 · 진동과 텍스트 중심의 청각장애인 모드
+</p>
 
 ## 구현 범위
 
@@ -56,6 +69,9 @@ flowchart LR
 | [`togedog-backend`](https://github.com/LG-TogeDog-Project/togedog-backend) | FastAPI, Firebase, WebSocket 기반 API 서버 |
 | [`togedog-ai`](https://github.com/LG-TogeDog-Project/togedog-ai) | 객체 탐지 데이터 파이프라인, 학습 노트북, 평가 결과 |
 | [`togedog-docs`](https://github.com/LG-TogeDog-Project/togedog-docs) | 서비스 구조, 데이터 모델, API 및 프로젝트 문서 |
+
+처음 실행하거나 구조를 파악하려면 각 코드 저장소의 `README.md`와
+[`togedog-docs`](https://github.com/LG-TogeDog-Project/togedog-docs)의 아키텍처·API 문서를 함께 확인하세요.
 
 ## AI 위험 객체 12종
 
