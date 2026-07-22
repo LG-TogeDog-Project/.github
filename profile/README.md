@@ -557,7 +557,9 @@ flowchart LR
 
 ## 11. 내부 API
 
-모든 요청은 JWT Bearer Token 인증을 사용합니다.
+아래 표는 최종 산출문서에서 정의한 **목표 API 계약**입니다. 운영 단계에서는 ThinQ/Firebase 인증과 JWT Bearer Token 적용을 전제로 설계했습니다.
+
+현재 공개된 FastAPI 프로토타입은 Firebase Auth/JWT 검증 전 단계로, 개발용 `X-Member-Id` 헤더와 `/members`, `/dogs`, `/devices`, `/walks`, `/danger-detections`, `/biometrics`, `/reports` 경로를 사용합니다. 구현된 Endpoint와 요청 예시는 [`togedog-backend` API 문서](https://github.com/LG-TogeDog-Project/togedog-backend/blob/main/docs/API_%EB%AA%85%EC%84%B8%EC%84%9C.md)에서 확인할 수 있습니다.
 
 | Method | Endpoint | 목적 | 우선순위 |
 |---|---|---|---|
@@ -681,7 +683,8 @@ TogeDog
 - FastAPI 기반 API 제공
 - 사용자·반려견·산책 기록 관리
 - 위험 감지 결과와 생체 데이터 저장
-- Firebase Admin SDK를 이용한 데이터 저장 및 사용자 인증
+- Firebase Admin SDK를 이용한 선택적 데이터 저장 연동
+- 공개 프로토타입 인증은 개발용 `X-Member-Id` 헤더를 사용하며, Firebase Auth·ThinQ 인증은 향후 연동 범위
 - 클라이언트와 데이터베이스 사이의 중간 계층 역할
 
 ### 13.4 실제 코드 구현 구조
@@ -696,7 +699,8 @@ TogeDog
 - `flutter_tts` 기반 한국어 위험 안내
 - 장애 유형에 따른 진동·텍스트 위험 배너
 - `--dart-define`으로 주입하는 FastAPI 서버 주소
-- YOLO와 YAMNet 모델을 연결하기 위한 On-Device AI 서비스 계층
+- YOLO 모델 연결용 On-Device 객체 탐지 계층
+- YAMNet 환경음 분석을 위한 실험적 서비스 계층(모델·학습 데이터는 MVP 및 공개 배포 범위에서 제외)
 
 #### Flutter 카메라 앱
 
@@ -727,6 +731,7 @@ TogeDog
 | WebSocket 위험 이벤트 | 구현 | `togedog-backend` |
 | Firebase·Memory Repository 전환 | 구현 | `togedog-backend` |
 | 12종 객체 탐지 모델 학습·평가 | 구현 | `togedog-ai` |
+| YAMNet 환경음 분석 | 연결 코드·확장 콘셉트 | `togedog-mobile`, `togedog-docs` |
 | 실제 심박수·활동량 센서 연동 | 콘셉트·데이터 구조 | `togedog-backend`, `togedog-docs` |
 | LG ThinQ 공식 계정·기기 API | 가상 연동 시나리오 | `togedog-docs` |
 | 상용 웨어러블 하드웨어 | 3D 콘셉트 | 프로젝트 산출문서 |
